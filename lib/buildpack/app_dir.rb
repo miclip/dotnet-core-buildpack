@@ -51,7 +51,7 @@ module AspNetCoreBuildpack
       File.foreach(deployment_file, encoding: 'utf-8') do |line|
         m = /project[ \t]*=[ \t]*(.*)/i.match(line)
         if m
-          printf "Match found at line %d",line
+          printf "Match found at line %s",line
           n = /.*([.](xproj|csproj))/i.match(m[1])
           path = n ? Pathname.new(File.dirname(m[1])) : Pathname.new(m[1])
           printf "path value: %s",path
